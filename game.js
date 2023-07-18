@@ -26,6 +26,17 @@ let ties = 0;
 /***************************** HELPER FUNCTIONS ******************************/
 function printHelp() {
   // Your code here
+  const start = "  Type ";
+
+  const options = [
+    start + "'r' for Rock",
+    start + "'p' for Paper",
+    start + "'s' for Scissors",
+    start + "'q' to quit",
+    start + "'h' for a list of valid commands\n"
+  ];
+
+  options.forEach(message => console.log(message));
 }
 
 function getWinner(move1, move2) {
@@ -48,11 +59,7 @@ function promptInput(rl) {
 
     if (cmd === 'h') {
       console.log("\nHelp:\n");
-      console.log("  Type 'r' for Rock");
-      console.log("  Type 'p' for Paper");
-      console.log("  Type 's' for Scissors");
-      console.log("  Type 'q' to quit");
-      console.log("  Type 'h' for a list of valid commands\n");
+      printHelp();
     } else if (cmd === 'q') {
       rl.close();
       return;
@@ -76,11 +83,7 @@ function promptInput(rl) {
       }
     } else {
       console.log("\nInvalid command.\n");
-      console.log("  Type 'r' for Rock");
-      console.log("  Type 'p' for Paper");
-      console.log("  Type 's' for Scissors");
-      console.log("  Type 'q' to quit");
-      console.log("  Type 'h' for a list of valid commands\n");
+      printHelp();
     }
 
     promptInput(rl);
