@@ -59,7 +59,7 @@ function getCPUMove() {
 
 function processMove(cmd, cpu) {
   // Your code here
-  console.log(`You pick ${cmd}, computer picks ${cpu}.`);
+  console.log(`You pick ${VALID_MOVES[cmd].name}, computer picks ${VALID_MOVES[cpu].name}.`);
 
   const winner = getWinner(cmd, cpu);
 
